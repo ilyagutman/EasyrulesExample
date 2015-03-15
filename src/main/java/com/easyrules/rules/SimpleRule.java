@@ -26,7 +26,7 @@ public class SimpleRule {
 
 	@Action
 	public void action() throws Exception {
-		System.out.println("the SimpleRule action has fired!");
+//		System.out.println("the SimpleRule action has fired!");
 		executed = true;
 	}
 

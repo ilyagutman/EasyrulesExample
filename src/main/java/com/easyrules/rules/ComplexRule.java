@@ -24,7 +24,7 @@ public class ComplexRule {
 
 	@Action
 	public void action() throws Exception {
-		System.out.println("the ComplexRule action has fired!");
+//		System.out.println("the ComplexRule action has fired!");
 		executed = true;
 	}
 
