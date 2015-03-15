@@ -11,6 +11,7 @@ public class ComplexRule {
 	 * The user input which represents the data that the rule will operate on.
 	 */
 	private String input;
+	private boolean executed = false;
 
 	public ComplexRule(String input) {
 		this.input = input;
@@ -24,6 +25,12 @@ public class ComplexRule {
 	@Action
 	public void action() throws Exception {
 		System.out.println("the ComplexRule action has fired!");
+		executed = true;
 	}
+
+	public boolean isExecuted() {
+        return executed;
+    }
+	
 
 }
