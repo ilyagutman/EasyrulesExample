@@ -4,7 +4,7 @@ import org.easyrules.annotation.Action;
 import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
-@Rule(name = "Simple Yes/No rule", description = "Prints Yes if rule says yes, and No, if rule evaluates to no.")
+@Rule(name = "Complex rule", description = "Succeds if the length of the message is greater than 5")
 public class ComplexRule {
 
 	/**
