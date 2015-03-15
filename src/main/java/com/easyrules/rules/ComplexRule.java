@@ -18,8 +18,6 @@ public class ComplexRule {
 
 	@Condition
 	public boolean condition() {
-		// The rule should be applied only if
-		// the piece of data reads 'yes'
 		return input.length() > 5;
 	}
 
