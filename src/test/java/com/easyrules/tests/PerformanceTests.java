@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import com.easyrules.rules.*;
 
-import java.util.logging.Level;
 import java.util.logging.LogManager;
 
 public class PerformanceTests {
@@ -102,26 +101,26 @@ public class PerformanceTests {
 	}
 
 	@Test
-	public void runBothRulesMillionTimes() throws Exception {
+	public void runBothRulesManyTimes() throws Exception {
 		long startTime = System.nanoTime();
-		runMlnTimes();
+		runManyTimes();
 		long endTime = System.nanoTime();
 
-		System.out.println("performed a million cycles in " + ((endTime - startTime)/1000000) + " milliseconds");
-		System.out.println("Througput is:" + (1000000/((endTime - startTime)/1000000000)) + " executions per sec.");
-		assertTrue((endTime - startTime)/1000000 < 100);
+		System.out.println("performed a 100000 cycles in " + ((endTime - startTime)/1000000) + " milliseconds");
+		System.out.println("Througput is:" + (100000/((endTime - startTime)/1000000000.0)) + " executions per sec.");
+		assertTrue((endTime - startTime)/1000000000 < 2);
 	}
 	
 	
-	private void runMlnTimes() {
+	private void runManyTimes() {
 		clearRules();
-		simpleRule = new SimpleRule("Yes");
-		complexRule = new ComplexRule("Yes");
+		simpleRule = new SimpleRule("YesYesYes");
+		complexRule = new ComplexRule("YesYesYes");
 		rulesEngine.registerRule(simpleRule);
 		rulesEngine.registerRule(complexRule);
 		
 		
-		for (long i = 0; i < 1000000; i++) {
+		for (long i = 0; i < 100000; i++) {
 			rulesEngine.fireRules();
 		}
 		
