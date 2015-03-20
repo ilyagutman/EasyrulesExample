@@ -47,36 +47,36 @@ public class DecisionTablePerfTest {
 	}
 
 	@Test
-	public void runRuleBatches() throws Exception {
-		int iterations;
+	public void runRulesBatches() throws Exception {
+		int messageCount;
 		int batches;
 
-		iterations = 1;
+		messageCount = 1;
 		batches = 1000000;
 		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
+				speed(messageCount * batches, runRulesBatch(messageCount, batches)),
 				is(FAST));
 
 	}
 
-	private long runRulesBatch(int iterations, int batches) {
+	private long runRulesBatch(int messageCount, int batches) {
 		long startTime = System.nanoTime();
 		for (int i = 0; i < batches; i++)
-			runRules(iterations);
+			runRules(messageCount);
 		long endTime = System.nanoTime();
 
 		if (REPORT)
-			logPerformance(iterations, batches, endTime - startTime);
+			logPerformance(messageCount, batches, endTime - startTime);
 		return (endTime - startTime);
 	}
 
-	private long runRules(int iterations) {
+	private long runRules(int messageCount) {
 		int process;
 		Message message;
 		List<FactHandle> fhList = new ArrayList<FactHandle>();
 		long factCount;
 
-		for (int i = 0; i < iterations; i++) {
+		for (int i = 0; i < messageCount; i++) {
 			process = (int) (Math.random() * 20.0);
 			message = new Message("Hello World " + process, process);
 			fhList.add(kSession.insert(message));
