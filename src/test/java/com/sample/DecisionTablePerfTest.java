@@ -51,56 +51,8 @@ public class DecisionTablePerfTest {
 		int iterations;
 		int batches;
 
-		iterations = 100000;
-		batches = 10;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 50000;
-		batches = 20;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 5000;
-		batches = 200;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 1000;
-		batches = 1000;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 1000;
-		batches = 2000;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 1000;
-		batches = 3000;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 500;
-		batches = 2000;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 500;
-		batches = 4000;
-		assertThat(
-				speed(iterations * batches, runRulesBatch(iterations, batches)),
-				is(FAST));
-
-		iterations = 500;
-		batches = 6000;
+		iterations = 1;
+		batches = 1000000;
 		assertThat(
 				speed(iterations * batches, runRulesBatch(iterations, batches)),
 				is(FAST));
